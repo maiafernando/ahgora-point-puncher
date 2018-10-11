@@ -6,19 +6,14 @@ echo ""
 echo "Por favor, insira os dados necessários."
 echo ""
 
-read -p "ACCOUNT: "  ACCOUNT
-read -p "PASSWORD: " PASSWORD
-read -p "IDENTITY: " IDENTITY
+echo "ACCOUNT:"
+read account
+export AHGORA_ACCOUNT=$account
 
-echo ""
-echo "Criando arquivo `data`..."
+echo "IDENTITY:"
+read identity
+export AHGORA_IDENTITY=$identity
 
-touch data
-echo "ACCOUNT='${ACCOUNT}'"   >> data
-echo "PASSWORD='${PASSWORD}'" >> data
-echo "IDENTITY='${IDENTITY}'" >> data
-
-echo "Arquivo criado! Você pode edita-lo a qualquer momento."
 echo ""
 
 chmod +x ahgora

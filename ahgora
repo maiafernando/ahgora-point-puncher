@@ -1,9 +1,10 @@
 #!/bin/bash
 
-source data
-
 success_message="Seu ponto foi efetivado :)"
 error_message="Seu ponto não foi efetivado :("
+
+echo 'Enter your password:'
+read -s PASSWORD
 
 function print_usage() {
   echo 'Usage: ahgora'
@@ -79,9 +80,9 @@ echo ""
 
 # Curl to the "api"
 CURL_FORM=`curl -sX POST \
-  -F "account=${ACCOUNT}" \
-  -F "password=${PASSWORD}" \
-  -F "identity=${IDENTITY}" \
+  -F "account=$AHGORA_ACCOUNT" \
+  -F "password=$PASSWORD" \
+  -F "identity=$AHGORA_IDENTITY" \
   -F "origin=pw2" \
   -F "key=" \
   http://www.ahgora.com.br/batidaonline/verifyIdentification`
